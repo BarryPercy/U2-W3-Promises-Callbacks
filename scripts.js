@@ -1,7 +1,7 @@
 const options={
     method: 'GET',
     headers: {
-        Authorization: "563492ad6f91700001000001f21f1a2507364a16ad1901b47e135552",
+        Authorization: "563492ad6f91700001000001e6826af18ad3455c9106aa3885ec34ae",
     }
 }
 function getQuery(query){
@@ -82,8 +82,10 @@ function changeView(){
     let closeBtn = document.getElementById("close-image-modal");
     for(let i=0;i<viewButtons.length;i++){
         viewButtons[i].onclick = function(){
-            imageModalBody.innerHTML=`${this.parentNode.parentNode.parentNode.parentNode.firstChild}`
-            console.log(this.parentNode.parentNode.parentNode.parentNode.firstChild);
+            imageModalBody.innerHTML=`<img src="" id="imageModalImage">`
+            let imageInModal = document.getElementById("imageModalImage")
+            console.log(imageInModal)
+            imageInModal.src=`${this.parentNode.parentNode.parentNode.parentNode.firstChild.src}`;
             modal.style.display = "block";
             closeBtn.addEventListener("click", function() {
                 modal.style.display = "none";
