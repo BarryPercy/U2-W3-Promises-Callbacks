@@ -72,6 +72,25 @@
     />
 
     <style>
+      body{
+        background-color: bisque;
+      }
+      .carousel-item{
+        height:20vw;
+        object-fit: contain;
+      }
+      .carousel{
+        width:50%;
+        margin:auto;
+      }
+      .card img{
+        height:250px;
+        width:auto;
+        object-fit: cover;
+      }
+      .hidden{
+          display:none;
+      }
       .jumbotron {
         padding-top: 3rem;
         padding-bottom: 3rem;
@@ -195,10 +214,30 @@
             them in a cool way!
           </p>
           <p>
-            <a href="#" class="btn btn-primary my-2">Load Images</a>
-            <a href="#" class="btn btn-secondary my-2">Load Secondary Images</a>
+            <a href="#" class="btn btn-primary my-2" onclick="getQuery('salad')">Load Images</a>
+            <a href="#" class="btn btn-secondary my-2" onclick="getQuery('crackers')">Load Secondary Images</a>
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Input</span>
+              </div>
+              <input type="text" id="search-input" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <a href="#" class="btn btn-danger my-2" id="search-button">Click Here To Search Above Input</a>
           </p>
+          <div class="modal" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Message</h4>
+                  <button type="button" class="close" id="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      
       </section>
 
       <div class="album py-5 bg-light">
@@ -224,7 +263,7 @@
                 </svg>
                 <div class="card-body">
                   <p class="card-text">
-                    This is a wider card with supporting text below as a natural
+                    m a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
                     longer.
                   </p>
@@ -622,6 +661,21 @@
             </div>
           </div>
         </div>
+        <div class="modal" id="imageModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">View Image</h4>
+                <button type="button" class="close" id="close-image-modal">&times;</button>
+              </div>
+              <div class="modal-body">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="carousel">
+
+        </div>
       </div>
     </main>
 
@@ -646,5 +700,6 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts.js"></script>
   </body>
 </html>
